@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+import { checkValidData } from "../utils/validate";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMesg, setErrorMesg] = useState(null);
+
+  const email = useRef(null);
+  const password = useRef(null);
+  const name = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+  };
+
+  const handleButtonClick = () => {
+    // Validate the Form data
+    const validationResult = checkValidData(
+      name.current.value,
+      email.current.value,
+      password.current.value
+    );
+
+    setErrorMesg(validationResult);
   };
 
   return (
@@ -18,28 +35,38 @@ const Login = () => {
         />
       </div>
       <div className="w-[20%] absolute my-32 mx-auto left-0 right-0 text-sm text-white bg-black bg-opacity-80 rounded-lg">
-        <form className="flex flex-col mx-8 my-4">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="flex flex-col mx-8 my-4"
+        >
           <h1 className="font-semibold text-2xl py-3 my-2">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
-          <input
-            type="text"
-            placeholder="Email Address"
-            className="p-2 mx-2 my-2 rounded-md bg-[#333333]"
-          />
           {!isSignInForm && (
             <input
+              ref={name}
               type="text"
-              placeholder="Name"
-              className="p-2 mx-2 my-2 rounded-md bg-[#333333]"
+              placeholder="Full Name"
+              className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
             />
           )}
           <input
+            ref={email}
+            type="text"
+            placeholder="Email Address"
+            className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
+          />
+          <input
+            ref={password}
             type="password"
             placeholder="Password"
-            className="p-2 mx-2 my-2 rounded-md bg-[#333333]"
+            className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
           />
-          <button className="p-2 mx-2 my-4 bg-red-700 rounded-md">
+          <p className="text-red-700 mx-2 p-2 ">{errorMesg}</p>
+          <button
+            className="p-2 mx-2 my-4 bg-red-700 rounded-md"
+            onClick={handleButtonClick}
+          >
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
           <p
