@@ -15,6 +15,8 @@
 - Created redux Store with userSlice
 - Implemented Sign Out
 - Updated Profile
+- Bugfix: Sign up user displayName and profile picture update
+- Bugfix: Protecting the browse route when the user is not loggedin
 
 # Features
 
