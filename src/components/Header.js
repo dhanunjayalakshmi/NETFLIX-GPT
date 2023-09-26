@@ -50,13 +50,8 @@ const Header = () => {
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
         <div className="flex items-center justify-between p-2">
-          <img
-            className="w-8 h-8 "
-            alt="usericon"
-            src={user?.photoURL}
-            // src="https://occ-0-3215-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABRFZFS8db1R43jhQH8qYonvQ7XOdqfn1JEgczxD7Uz5vCGx-vnN18_sI8xORbinwQJzWgucNziIuHH8mhFA1iR7CGB8A4ms.png?r=eea"
-          />
-          <button className="p-2" onClick={handleSignOut}>
+          <img className="w-8 h-8 " alt="usericon" src={user?.photoURL} />
+          <button className="p-2 text-white" onClick={handleSignOut}>
             Sign Out
           </button>
         </div>

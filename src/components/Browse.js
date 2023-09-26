@@ -8,14 +8,9 @@ const Browse = () => {
 
   return (
     <div>
-      <div className="h-24">
-        <Header />
-      </div>
-
-      <div className="px-12">
-        <MainContainer />
-        <SecondaryContainer />
-      </div>
+      <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };
