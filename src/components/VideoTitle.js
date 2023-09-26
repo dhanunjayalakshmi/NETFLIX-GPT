@@ -3,8 +3,8 @@ import { FaPlay, FaCircleInfo } from "react-icons/fa6";
 const VideoTitle = ({ title, overview }) => {
   return (
     <div className="w-1/3">
-      <h1 className="text-6xl font-bold">{title}</h1>
-      <p className="py-6 text-lg">{overview}</p>
+      <h1 className="text-4xl font-bold">{title}</h1>
+      <p className="py-6 text-sm">{overview}</p>
       <div className="flex items-center justify-normal">
         <button className="flex items-center bg-gray-600 bg-opacity-50 text-white text-lg font-bold py-2 px-4 rounded-sm">
           <FaPlay className="m-1 text-xl" />
