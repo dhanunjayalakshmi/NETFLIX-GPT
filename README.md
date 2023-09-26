@@ -17,6 +17,7 @@
 - Updated Profile
 - Bugfix: Sign up user displayName and profile picture update
 - Bugfix: Protecting the browse route when the user is not loggedin
+- Unsubscribed to the onAuthStateChange Callback
 
 # Features
 
