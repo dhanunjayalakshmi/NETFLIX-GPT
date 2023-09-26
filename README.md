@@ -19,6 +19,8 @@
 - Bugfix: Protecting the browse route when the user is not loggedin
 - Unsubscribed to the onAuthStateChange Callback
 - Add hardcoded values to constant file
+- Register TMDB API & Create an app & get access token
+- Get data from TMDB now playing movies list API
 
 # Features
 

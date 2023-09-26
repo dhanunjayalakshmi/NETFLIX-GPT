@@ -7,7 +7,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { LOGIN_BACKGROUND, USER_AVATAR } from "../utils/constants";
@@ -20,7 +19,6 @@ const Login = () => {
   const password = useRef(null);
   const name = useRef(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
