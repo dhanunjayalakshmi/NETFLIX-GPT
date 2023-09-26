@@ -4,5 +4,18 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".hide-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".hide-scrollbar": {
+          scrollbarWidth: "none",
+          "-ms-overflow-style": "none",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "hover"]);
+    },
+  ],
 };

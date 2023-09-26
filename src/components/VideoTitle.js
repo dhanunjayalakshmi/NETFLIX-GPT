@@ -2,7 +2,7 @@ import { FaPlay, FaCircleInfo } from "react-icons/fa6";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="w-screen aspect-video pt-[20%] absolute text-white bg-gradient-to-r from-black">
+    <div className="w-screen aspect-video pt-[16%] absolute text-white bg-gradient-to-r from-black ">
       <h1 className="text-4xl ml-10 font-bold">{title}</h1>
       <p className="w-1/3 py-6 text-sm ml-10">{overview}</p>
       <div className="flex items-center justify-normal ml-10">
