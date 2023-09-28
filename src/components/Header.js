@@ -60,7 +60,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="w-full flex items-center justify-between absolute px-8 py-2 bg-gradient-to-b from-black z-10">
+    <div className="fixed w-screen flex items-center justify-between px-8 py-2 bg-gradient-to-b from-black z-10">
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
         <div className="flex items-center justify-between p-2">

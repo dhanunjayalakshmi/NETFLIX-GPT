@@ -93,7 +93,11 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src={LOGIN_BACKGROUND} alt="login-background" />
+        <img
+          className="w-screen h-screen object-cover"
+          src={LOGIN_BACKGROUND}
+          alt="login-background"
+        />
       </div>
       <div className="w-[20%] absolute my-32 mx-auto left-0 right-0 text-sm text-white bg-black bg-opacity-80 rounded-lg">
         <form
