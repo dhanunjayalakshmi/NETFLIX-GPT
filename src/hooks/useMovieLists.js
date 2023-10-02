@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addNowPlayingMovies,
   addPopularMovies,
@@ -10,6 +10,9 @@ import { API_OPTIONS } from "../utils/constants";
 
 const useMovieLists = () => {
   const dispatch = useDispatch();
+
+  const movieCategoriesData = useSelector((store) => store.movies);
+
   const movieCategories = [
     {
       category: "nowPlayingMovies",
@@ -33,16 +36,21 @@ const useMovieLists = () => {
     },
   ];
 
+  const getMoviesData = async (movieCategory) => {
+    const data = await fetch(
+      "https://api.themoviedb.org/3/movie/" +
+        movieCategory?.url_name +
+        "?page=1",
+      API_OPTIONS
+    );
+    const json = await data.json();
+    dispatch(movieCategory?.dispatcher(json.results));
+  };
+
   useEffect(() => {
     movieCategories?.map(async (movieCategory) => {
-      const data = await fetch(
-        "https://api.themoviedb.org/3/movie/" +
-          movieCategory?.url_name +
-          "?page=1",
-        API_OPTIONS
-      );
-      const json = await data.json();
-      dispatch(movieCategory?.dispatcher(json.results));
+      if (!movieCategoriesData[movieCategory?.category])
+        getMoviesData(movieCategory);
     });
   }, []);
 };
