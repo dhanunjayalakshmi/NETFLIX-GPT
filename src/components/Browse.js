@@ -12,8 +12,9 @@ const Browse = () => {
   // useNowPlayingMovies();
   useMovieLists();
   useEffect(() => {
-    window.scrollTo(0, 80);
-  }, []);
+    window.scrollTo(60, 80);
+    console.log("Hello");
+  });
 
   return (
     <div className="w-screen aspect-video">
