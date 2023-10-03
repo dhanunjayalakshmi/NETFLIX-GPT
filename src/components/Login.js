@@ -99,12 +99,12 @@ const Login = () => {
           alt="login-background"
         />
       </div>
-      <div className="mx-10 md:w-[40%] lg:w-[20%] absolute my-32 md:mx-auto left-0 right-0 text-sm text-white bg-black bg-opacity-80 rounded-lg">
+      <div className="mx-10 md:w-[40%] lg:w-[30%] absolute my-32 md:mx-auto left-0 right-0 text-xl text-white bg-black bg-opacity-80 rounded-lg">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col mx-8 my-4"
         >
-          <h1 className="font-semibold text-2xl py-3 my-2">
+          <h1 className="font-semibold text-2xl md:text-4xl py-3 my-2">
             {isSignInForm ? "Sign In" : "Sign Up"}
           </h1>
           {!isSignInForm && (
@@ -135,7 +135,7 @@ const Login = () => {
             {isSignInForm ? "Sign In" : "Sign Up"}
           </button>
           <p
-            className="p-2 mx-2 my-2 cursor-pointer"
+            className="p-2 mx-2 my-2 cursor-pointer text-lg"
             onClick={toggleSignInForm}
           >
             {isSignInForm

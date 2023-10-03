@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import useMovieLists from "../hooks/useMovieLists";
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+// import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import GptSearch from "./GptSearch";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
@@ -12,7 +12,7 @@ const Browse = () => {
   useMovieLists();
 
   return (
-    <div>
+    <div className="w-screen aspect-video">
       <Header />
       {showGptSearch ? (
         <GptSearch />
