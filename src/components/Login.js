@@ -99,7 +99,7 @@ const Login = () => {
           alt="login-background"
         />
       </div>
-      <div className="w-[20%] absolute my-32 mx-auto left-0 right-0 text-sm text-white bg-black bg-opacity-80 rounded-lg">
+      <div className="mx-10 md:w-[40%] lg:w-[20%] absolute my-32 md:mx-auto left-0 right-0 text-sm text-white bg-black bg-opacity-80 rounded-lg">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col mx-8 my-4"
