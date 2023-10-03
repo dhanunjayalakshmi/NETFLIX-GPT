@@ -39,6 +39,12 @@
 - GPT Search Bar
 - Multi-language feature in our GPT page
 - Integrate GPT APIs
+- Fetched GPT movie Suggestions from TMDB
+- Created gPT slice and added data
+- Reused Movie List component to make movie suggestion container
+- Memoisation
+- Created .env file and added it to .gitignore
+- Made our application responsive
 
 # Features
 
