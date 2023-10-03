@@ -12,8 +12,10 @@ const Browse = () => {
   // useNowPlayingMovies();
   useMovieLists();
   useEffect(() => {
-    if (window.matchMedia("(min-width: 768px)").matches) {
+    if (window.matchMedia("(min-width: 768px)").matches && !showGptSearch) {
       window.scrollTo(60, 180);
+    } else {
+      window.scrollTo(0, 0);
     }
   });
 
