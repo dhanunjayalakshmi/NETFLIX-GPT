@@ -5,11 +5,15 @@ import GptSearch from "./GptSearch";
 import Header from "./Header";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import { useEffect } from "react";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   // useNowPlayingMovies();
   useMovieLists();
+  useEffect(() => {
+    window.scrollTo(0, 80);
+  }, []);
 
   return (
     <div className="w-screen aspect-video">
