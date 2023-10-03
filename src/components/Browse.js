@@ -12,8 +12,9 @@ const Browse = () => {
   // useNowPlayingMovies();
   useMovieLists();
   useEffect(() => {
-    window.scrollTo(60, 80);
-    console.log("Hello");
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      window.scrollTo(60, 180);
+    }
   });
 
   return (
