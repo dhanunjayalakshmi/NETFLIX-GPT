@@ -60,13 +60,13 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="fixed w-screen flex items-center justify-between px-8 py-2 bg-gradient-to-b from-black z-10">
+    <div className="fixed w-screen flex items-center justify-items-start md:justify-between pl-8 py-2 bg-gradient-to-b from-black z-10 md:pr-8">
       <img className="w-44" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex items-center justify-between p-2">
+        <div className="p-2 flex items-center justify-evenly md:justify-between">
           {showGptSearch && (
             <select
-              className="p-2 m-2 bg-gray-900 text-white"
+              className="p-2 m-2 bg-gray-900 text-white rounded-lg"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES?.map((lang) => (
@@ -77,13 +77,16 @@ const Header = () => {
             </select>
           )}
           <button
-            className="py-2 px-2 m-2 bg-purple-800 rounded-lg text-sm text-white"
+            className="p-2 m-2 bg-gray-900 rounded-lg text-sm text-white"
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
-          <img className="w-8 h-8" alt="usericon" src={user?.photoURL} />
-          <button className="p-2 text-white" onClick={handleSignOut}>
+          <img className="m-2 w-8 h-8" alt="usericon" src={user?.photoURL} />
+          <button
+            className="p-2 bg-gray-900 text-white rounded-lg"
+            onClick={handleSignOut}
+          >
             Sign Out
           </button>
         </div>

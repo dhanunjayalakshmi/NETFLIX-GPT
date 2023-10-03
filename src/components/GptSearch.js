@@ -6,7 +6,11 @@ const GptSearch = () => {
   return (
     <div>
       <div className="fixed -z-10">
-        <img src={LOGIN_BACKGROUND} alt="login-background" />
+        <img
+          className="h-screen object-cover"
+          src={LOGIN_BACKGROUND}
+          alt="login-background"
+        />
       </div>
       <GptSearchBar />
       <GptMovieSuggestions />
