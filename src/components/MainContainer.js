@@ -7,12 +7,12 @@ const MainContainer = () => {
 
   if (!movies) return;
 
-  const mainMovie = movies[13];
+  const mainMovie = movies[9];
 
   const { id, original_title, overview } = mainMovie;
 
   return (
-    <div className="w-screen aspect-video bg-black">
+    <div className="w-screen aspect-video overflow-hidden hide-scrollbar">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>
