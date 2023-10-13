@@ -49,7 +49,7 @@ const MovieInfo = () => {
 
   return (
     <>
-      <div className="absolute">
+      <div className="fixed">
         <img
           className="w-screen h-screen object-cover"
           src={LOGIN_BACKGROUND}
