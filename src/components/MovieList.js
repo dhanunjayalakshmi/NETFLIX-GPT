@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
+  const handleClick = (movie) => {
+    sessionStorage.setItem("movie_data", JSON.stringify(movie));
+  };
+
   return (
     <div className="px-6 text-white">
       <h1 className="text-xl md:text-3xl font-bold py-4 mx-2 md:mx-4">
@@ -9,7 +14,13 @@ const MovieList = ({ title, movies }) => {
       <div className="flex overflow-x-scroll hide-scrollbar">
         <div className="flex">
           {movies?.map((movie) => (
-            <MovieCard key={movie.id} posterPath={movie?.poster_path} />
+            <Link
+              to={`/watch/${movie.id}`}
+              key={movie.id}
+              onClick={() => handleClick(movie)}
+            >
+              <MovieCard key={movie.id} posterPath={movie?.poster_path} />
+            </Link>
           ))}
         </div>
       </div>

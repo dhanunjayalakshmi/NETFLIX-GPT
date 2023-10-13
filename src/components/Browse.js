@@ -9,6 +9,7 @@ import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  // const showMovieInfo = useSelector((store) => store.movies.showMovieInfo);
   // useNowPlayingMovies();
   useMovieLists();
   // useEffect(() => {
