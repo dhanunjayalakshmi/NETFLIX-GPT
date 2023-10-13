@@ -49,17 +49,14 @@ const MovieInfo = () => {
 
   return (
     <>
-      {/* <div className="absolute">
+      <div className="absolute">
         <img
           className="w-screen h-screen object-cover"
           src={LOGIN_BACKGROUND}
           alt="login-background"
         />
-      </div> */}
-      <div
-        className="flex flex-col h-screen fixed inset-0 bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: `url(${LOGIN_BACKGROUND})` }}
-      >
+      </div>
+      <div className="flex flex-col h-screen">
         {playVideo ? (
           <div className="relative h-full">
             <iframe
@@ -130,21 +127,21 @@ const MovieInfo = () => {
               </div>
 
               <div className="w-full md:w-2/3 ml-0 md:ml-[3%]">
-                <h1 className="text-2xl md:text-3xl text-red-700 font-bold">
+                <h1 className="text-xl md:text-3xl text-red-700 font-bold">
                   {title}
                 </h1>
-                <p className="py-2 font-bold text-slate-300 text-xl md:text-2xl">
+                <p className="py-2 font-bold text-slate-300 text-md md:text-2xl">
                   Overview
                 </p>
-                <p className="py-1 text-lg md:text-xl">{overview}</p>
-                <p className="py-2 font-bold text-slate-300 text-xl md:text-2xl">
+                <p className="py-1 text-md md:text-xl">{overview}</p>
+                <p className="py-2 font-bold text-slate-300 text-md md:text-2xl">
                   Release Date
                 </p>
                 <p className="py-1 text-lg md:text-xl">{release_date}</p>
-                <p className="py-2 font-bold text-slate-300 text-xl md:text-2xl">
+                <p className="py-2 font-bold text-slate-300 text-md md:text-2xl">
                   Rating
                 </p>
-                <p className="py-1 text-lg md:text-xl">{vote_average}</p>
+                <p className="py-1 text-md md:text-xl">{vote_average}</p>
 
                 {!playVideo && (
                   <button
