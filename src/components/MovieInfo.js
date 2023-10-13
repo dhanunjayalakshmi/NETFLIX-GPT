@@ -49,14 +49,17 @@ const MovieInfo = () => {
 
   return (
     <>
-      <div className="absolute">
+      {/* <div className="absolute">
         <img
           className="w-screen h-screen object-cover"
           src={LOGIN_BACKGROUND}
           alt="login-background"
         />
-      </div>
-      <div className="flex flex-col h-screen">
+      </div> */}
+      <div
+        className="flex flex-col h-screen fixed inset-0 bg-no-repeat bg-cover bg-center"
+        style={{ backgroundImage: `url(${LOGIN_BACKGROUND})` }}
+      >
         {playVideo ? (
           <div className="relative h-full">
             <iframe
