@@ -110,7 +110,7 @@ const MovieInfo = () => {
           //     </div>
           //   </div>
           // </div>
-          <div className="p-4 lg:w-[50%] h-auto sm:h-[80%] md:h-[60%] absolute mt-4 sm:mt-[2%] md:mt-[5%] mx-auto left-0 right-0 text-base md:text-xl text-white bg-black bg-opacity-90 rounded-lg">
+          <div className="p-4 lg:w-[50%] h-auto sm:h-[100%] md:h-[60%] absolute mt-4 sm:mt-[2%] md:mt-[5%] mx-auto left-0 right-0 text-base md:text-xl text-white bg-black bg-opacity-90 rounded-lg">
             <button
               className="text-xl md:text-3xl text-red-700 px-4 md:px-6 py-2 my-2"
               onClick={() => navigate("/browse")}
