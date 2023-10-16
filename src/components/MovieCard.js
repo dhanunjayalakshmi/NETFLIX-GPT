@@ -4,8 +4,8 @@ const MovieCard = ({ posterPath }) => {
   if (!posterPath) return;
 
   return (
-    <div className="w-48 mx-2 md:mx-6">
-      <img src={IMG_CDN_URL + "w200/" + posterPath} alt="Movie" />
+    <div className="w-52 mx-2 md:mx-4">
+      <img src={IMG_CDN_URL + "w500/" + posterPath} alt="Movie" />
     </div>
   );
 };
