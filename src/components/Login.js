@@ -100,9 +100,9 @@ const Login = () => {
         />
       </div>
       <div className="absolute flex justify-center items-center min-h-screen  left-0 right-0">
-        <div className="bg-black bg-opacity-80 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto">
+        <div className="bg-black bg-opacity-80 p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto">
           <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-            <h1 className="font-semibold text-2xl text-white text-center">
+            <h1 className="font-semibold text-3xl lg:text-4xl text-white text-center">
               {isSignInForm ? "Sign In" : "Sign Up"}
             </h1>
             {!isSignInForm && (
@@ -110,24 +110,24 @@ const Login = () => {
                 ref={name}
                 type="text"
                 placeholder="Full Name"
-                className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
+                className="w-full p-2 lg:p-4 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
               />
             )}
             <input
               ref={email}
               type="text"
               placeholder="Email Address"
-              className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
+              className="w-full p-2 lg:p-4 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
             />
             <input
               ref={password}
               type="password"
               placeholder="Password"
-              className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
+              className="w-full p-2 lg:p-4 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
             />
             {errorMesg && <p className="text-red-700">{errorMesg}</p>}
             <button
-              className="w-full p-2 bg-red-700 rounded-md text-white"
+              className="w-full p-2 lg:p-4 bg-red-700 rounded-md text-white"
               onClick={handleButtonClick}
             >
               {isSignInForm ? "Sign In" : "Sign Up"}
