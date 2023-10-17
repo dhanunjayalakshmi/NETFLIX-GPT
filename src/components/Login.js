@@ -22,7 +22,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
-    setIsSignInForm(!isSignInForm);
+    setIsSignInForm((prev) => !prev);
   };
 
   const handleButtonClick = () => {
@@ -99,50 +99,49 @@ const Login = () => {
           alt="login-background"
         />
       </div>
-      <div className="mx-10 md:w-[40%] lg:w-[30%] absolute my-32 md:mx-auto left-0 right-0 text-xl text-white bg-black bg-opacity-80 rounded-lg">
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col mx-8 my-4"
-        >
-          <h1 className="font-semibold text-2xl md:text-4xl py-3 my-2">
-            {isSignInForm ? "Sign In" : "Sign Up"}
-          </h1>
-          {!isSignInForm && (
+      <div className="absolute flex justify-center items-center min-h-screen  left-0 right-0">
+        <div className="bg-black bg-opacity-80 p-8 rounded-lg shadow-lg w-full max-w-md mx-auto">
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+            <h1 className="font-semibold text-2xl text-white text-center">
+              {isSignInForm ? "Sign In" : "Sign Up"}
+            </h1>
+            {!isSignInForm && (
+              <input
+                ref={name}
+                type="text"
+                placeholder="Full Name"
+                className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
+              />
+            )}
             <input
-              ref={name}
+              ref={email}
               type="text"
-              placeholder="Full Name"
-              className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
+              placeholder="Email Address"
+              className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
             />
-          )}
-          <input
-            ref={email}
-            type="text"
-            placeholder="Email Address"
-            className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
-          />
-          <input
-            ref={password}
-            type="password"
-            placeholder="Password"
-            className="p-2 mx-2 my-2 rounded-md bg-[#333333] focus:outline-none"
-          />
-          <p className="text-red-700 mx-2 p-2 ">{errorMesg}</p>
-          <button
-            className="p-2 mx-2 my-4 bg-red-700 rounded-md"
-            onClick={handleButtonClick}
-          >
-            {isSignInForm ? "Sign In" : "Sign Up"}
-          </button>
-          <p
-            className="p-2 mx-2 my-2 cursor-pointer text-lg"
-            onClick={toggleSignInForm}
-          >
-            {isSignInForm
-              ? "New to Netflix? Sign Up Now"
-              : "Already registered? Sign In Now"}
-          </p>
-        </form>
+            <input
+              ref={password}
+              type="password"
+              placeholder="Password"
+              className="w-full p-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none"
+            />
+            {errorMesg && <p className="text-red-700">{errorMesg}</p>}
+            <button
+              className="w-full p-2 bg-red-700 rounded-md text-white"
+              onClick={handleButtonClick}
+            >
+              {isSignInForm ? "Sign In" : "Sign Up"}
+            </button>
+            <p
+              className="text-center text-white cursor-pointer"
+              onClick={toggleSignInForm}
+            >
+              {isSignInForm
+                ? "New to Netflix? Sign Up Now"
+                : "Already registered? Sign In Now"}
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
