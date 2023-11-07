@@ -87,6 +87,10 @@ const Login = () => {
           setErrorMesg(errorCode + "-" + errorMessage);
         });
     }
+
+    if (email.current) email.current.value = "";
+    if (password.current) password.current.value = "";
+    if (name.current) name.current.value = "";
   };
 
   return (

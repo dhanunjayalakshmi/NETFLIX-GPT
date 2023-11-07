@@ -7,7 +7,7 @@ const VideoTitle = ({ title, overview }) => {
         <h1 className="text-xl md:text-3xl xl:text-4xl px-10 font-bold">
           {title}
         </h1>
-        <p className="hidden xl:inline-block xl:w-1/4 py-6 text-xl xl:px-10">
+        <p className="hidden xl:inline-block xl:w-1/3 2xl:w-1/4 py-6 text-xl xl:px-10">
           {overview}
         </p>
         <div className="flex items-center justify-normal mt-2 ml-10">
@@ -15,10 +15,10 @@ const VideoTitle = ({ title, overview }) => {
             <FaPlay className="m-1 text-sm lg:text-xl" />
             Play
           </button>
-          <button className="hidden xl:flex items-center mx-4 bg-gray-600 text-sm xl:text-xl font-bold py-2 px-3 rounded-sm hover:bg-opacity-80">
+          {/* <button className="hidden xl:flex items-center mx-4 bg-gray-600 text-sm xl:text-xl font-bold py-2 px-3 rounded-sm hover:bg-opacity-80">
             <FaCircleInfo className="m-1 text-sm lg:text-xl" />
             More Info
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

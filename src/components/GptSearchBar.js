@@ -4,6 +4,7 @@ import { useRef } from "react";
 import openai from "../utils/openai";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
+import { setIsLoading } from "../utils/moviesSlice";
 
 const GptSearchBar = () => {
   const langKey = useSelector((store) => store.config.lang);
@@ -17,11 +18,18 @@ const GptSearchBar = () => {
         "&include_adult=false&language=en-US&page=1&region=India",
       API_OPTIONS
     );
+
     const json = await data.json();
+    // const originalMovies = json?.results?.filter(
+    //   (movieItem) =>
+    //     movieItem.original_title.includes(movie) && movieItem.id < 100000
+    // ); // Filtering out based on title and ensuring the movie ID is under a certain threshold (assuming newer or unrelated entries have higher IDs)
+    // console.log(originalMovies);
     return json.results;
   };
 
   const handleGptSearchClick = async () => {
+    dispatch(setIsLoading(true));
     //Make an API call to GPT API and get movie results
     const gptQuery =
       "Act as a Movie Recommendation System and suggest some movies for the query " +
@@ -46,6 +54,7 @@ const GptSearchBar = () => {
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: moviesData })
     );
+    dispatch(setIsLoading(false));
   };
 
   return (
