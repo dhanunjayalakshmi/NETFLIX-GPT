@@ -77,9 +77,9 @@ const MovieInfo = () => {
           <div className="p-4 h-auto lg:w-[80%] xl:w-[50%] sm:h-[100%] md:h-[90%] lg:h-[80%] xl:h-[60%] absolute md:my-[5%] mx-auto left-0 right-0 text-base md:text-xl text-white bg-black bg-opacity-90 rounded-lg">
             <button
               className="text-xl md:text-2xl text-red-700 px-4 md:px-6 py-2 md:my-2"
-              onClick={() => navigate("/browse")}
+              onClick={() => navigate(-1)}
             >
-              Home
+              Back
             </button>
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/3 mb-6">
