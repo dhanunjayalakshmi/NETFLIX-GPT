@@ -74,23 +74,23 @@ const MovieInfo = () => {
             </button>
           </div>
         ) : (
-          <div className="p-4 h-auto lg:w-[80%] xl:w-[50%] sm:h-[100%] md:h-[90%] lg:h-[80%] xl:h-[60%] absolute md:my-[5%] mx-auto left-0 right-0 text-base md:text-xl text-white bg-black bg-opacity-90 rounded-lg">
+          <div className="absolute p-4 h-auto m-auto sm:h-[100%] lg:w-[90%] lg:h-[90%] xl:w-[70%] 2xl:w-[60%] 2xl:h-[70%] lg:left-0 lg:right-0 lg:top-0 lg:bottom-0 text-base md:text-xl text-white bg-black bg-opacity-90 rounded-lg">
             <button
               className="text-xl md:text-2xl text-red-700 px-4 md:px-6 py-2 md:my-2"
               onClick={() => navigate(-1)}
             >
               Back
             </button>
-            <div className="flex flex-col md:flex-row">
-              <div className="w-full md:w-1/3 mb-6">
+            <div className="flex flex-col lg:flex-row">
+              <div className="w-full lg:w-1/3 lg:p-2">
                 <img
-                  className="mx-auto w-[50%] sm:w-[40%] md:w-auto"
+                  className="mx-auto w-[50%] sm:w-[40%] lg:w-auto"
                   src={IMG_CDN_URL + "w400/" + poster_path}
                   alt="Movie"
                 />
               </div>
 
-              <div className="w-full md:w-2/3 ml-0 md:ml-[3%]">
+              <div className="w-full lg:w-2/3 lg:p-2">
                 <h1 className="text-xl md:text-3xl text-red-700 font-bold">
                   {title}
                 </h1>
