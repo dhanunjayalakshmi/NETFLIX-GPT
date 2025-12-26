@@ -26,4 +26,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "spanish", name: "Spanish" },
 ];
 
-export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const DEEPSEEK_API_KEY = process.env.REACT_APP_DEEPSEEK_API_KEY;

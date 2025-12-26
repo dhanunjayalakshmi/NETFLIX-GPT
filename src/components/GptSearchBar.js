@@ -36,9 +36,9 @@ const GptSearchBar = () => {
       searchText.current.value +
       ". Only give me the names of top 5 movies, comma seperated like the example result given ahead. Example Result: RRR, Bahubali, Pokiri, Mahanati, Business Man.";
 
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: "user", content: gptQuery }],
-      model: "gpt-3.5-turbo",
+    const gptResults = await openai?.chat?.completions?.create({
+      messages: [{ role: "system", content: gptQuery }],
+      model: "deepseek-chat",
     });
 
     if (!gptResults.choices) {

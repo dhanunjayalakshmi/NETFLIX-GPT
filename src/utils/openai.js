@@ -1,8 +1,9 @@
 import OpenAI from "openai";
-import { OPENAI_KEY } from "./constants";
+import { DEEPSEEK_API_KEY } from "./constants";
 
 const openai = new OpenAI({
-  apiKey: OPENAI_KEY, // defaults to process.env["OPENAI_API_KEY"]
+  baseURL: "https://api.deepseek.com",
+  apiKey: DEEPSEEK_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 
