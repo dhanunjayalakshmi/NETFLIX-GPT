@@ -25,5 +25,3 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
-
-export const DEEPSEEK_API_KEY = process.env.REACT_APP_DEEPSEEK_API_KEY;

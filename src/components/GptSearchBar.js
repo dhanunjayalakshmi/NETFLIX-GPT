@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
 import { useRef } from "react";
-import openai from "../utils/openai";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
 import { setIsLoading } from "../utils/moviesSlice";
@@ -30,31 +29,45 @@ const GptSearchBar = () => {
 
   const handleGptSearchClick = async () => {
     dispatch(setIsLoading(true));
-    //Make an API call to GPT API and get movie results
+
     const gptQuery =
       "Act as a Movie Recommendation System and suggest some movies for the query " +
       searchText.current.value +
       ". Only give me the names of top 5 movies, comma seperated like the example result given ahead. Example Result: RRR, Bahubali, Pokiri, Mahanati, Business Man.";
 
-    const gptResults = await openai?.chat?.completions?.create({
-      messages: [{ role: "system", content: gptQuery }],
-      model: "deepseek-chat",
-    });
+    try {
+      const response = await fetch("/.netlify/functions/ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: gptQuery,
+        }),
+      });
 
-    if (!gptResults.choices) {
-      //TODO: write error handling
+      const data = await response.json();
+
+      if (!data?.result) {
+        // TODO: handle error
+        dispatch(setIsLoading(false));
+        return;
+      }
+
+      const gptMovies = data?.result?.split(", ");
+
+      const moviesDataPromises = gptMovies?.map((movie) =>
+        searchMovieTMDB(movie)
+      );
+      const moviesData = await Promise.all(moviesDataPromises);
+      dispatch(
+        addGptMovieResult({ movieNames: gptMovies, movieResults: moviesData })
+      );
+    } catch (error) {
+      console.error("GPT search failed", error);
+    } finally {
+      dispatch(setIsLoading(false));
     }
-
-    const gptMovies = gptResults?.choices[0]?.message?.content.split(", ");
-
-    const moviesDataPromises = gptMovies?.map((movie) =>
-      searchMovieTMDB(movie)
-    );
-    const moviesData = await Promise.all(moviesDataPromises);
-    dispatch(
-      addGptMovieResult({ movieNames: gptMovies, movieResults: moviesData })
-    );
-    dispatch(setIsLoading(false));
   };
 
   return (
