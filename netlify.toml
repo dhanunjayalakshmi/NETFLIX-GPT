@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[secrets_scanning]
+  omit_keys = ["REACT_APP_TMDB_KEY"]
